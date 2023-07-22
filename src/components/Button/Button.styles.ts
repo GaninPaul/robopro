@@ -18,7 +18,7 @@ export const Container = styled.View<IContainer>`
   padding: 12px 24px;
 
   width: auto;
-  height: ${({height}) => height}px;
+  height: ${({ height }) => height}px;
 
   background-color: ${({
     pressed,
@@ -39,7 +39,7 @@ interface IText {
 
 export const Text = styled.Text<IText>`
   text-align: center;
-  color: ${({color, theme, disabled}) =>
+  color: ${({ color, theme, disabled }) =>
     disabled ? theme.buttonsTextDisabled : color};
-  margin-left: ${({startIcon}) => (startIcon ? 8 : 0)}px;
+  margin-left: ${({ startIcon }) => (startIcon ? 8 : 0)}px;
 `;

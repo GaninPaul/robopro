@@ -1,7 +1,7 @@
 import React from 'react';
-import {PressableProps, TextStyle, ViewStyle} from 'react-native';
+import { PressableProps, TextStyle, ViewStyle } from 'react-native';
 
-import {ButtonPressable, Container, Text} from './Button.styles';
+import { ButtonPressable, Container, Text } from './Button.styles';
 
 export interface ButtonProps extends PressableProps {
   children: React.ReactNode;
@@ -27,7 +27,7 @@ export const Button = ({
     pressed: '#0A5046',
     text: '#FFFFFF',
   };
-  const buttonSize = {height: 48, textType: 'headlineBold'};
+  const buttonSize = { height: 48, textType: 'headlineBold' };
 
   return (
     <ButtonPressable
@@ -35,7 +35,7 @@ export const Button = ({
       style={containerStyle}
       onPress={onPress}
       {...props}>
-      {({pressed}: {pressed: boolean}) => (
+      {({ pressed }: { pressed: boolean }) => (
         <Container
           defaultColor={buttonTheme.default}
           disabled={disabled}
