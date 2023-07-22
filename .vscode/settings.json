@@ -1,6 +1,10 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
   "importSorter.generalConfiguration.sortOnBeforeSave": true,
   "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.type": "newLineEachExpressionAfterCountLimitExceptIfOnlyOne",
   "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.count": 80,
@@ -86,5 +90,7 @@
       "orderLevel": 160
     }
   ],
-  "java.configuration.updateBuildConfiguration": "disabled"
+  "eslint.format.enable": true,
+  "editor.formatOnPaste": true,
+  "workbench.editor.defaultBinaryEditor": "default"
 }
