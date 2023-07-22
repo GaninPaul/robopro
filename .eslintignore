@@ -1,0 +1,13 @@
+babel.config.js
+jest.config.js
+react-native.config.js
+metro.config.js
+.eslintrc.js
+.prettierrc.js
+jest/
+libs/
+node_modules/
+ios/
+android/
+.vscode/
+index.js

@@ -1,3 +1,61 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json"
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "lib": ["es2017"],
+    "allowJs": true,
+    "jsx": "react-native",
+    "noEmit": true,
+    "isolatedModules": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "config": ["./src/config.ts"],
+      "types/*": ["./src/types/*"],
+      "navigation/*": ["./src/navigation/*"],
+      "components/*": ["./src/components/*"],
+      "services/*": ["./src/services/*"],
+      "utils/*": ["./src/utils/*"],
+      "constants/*": ["./src/constants/*"],
+      "stores/*": ["./src/stores/*"],
+      "screens/*": ["./src/screens/*"],
+      "theme/*": ["./src/theme/*"],
+      "assets/*": ["./src/assets/*"],
+      "hooks/*": ["./src/hooks/*"],
+      "controllers/*": ["./src/controllers/*"],
+      "tests/*": ["./src/tests/*"]
+    },
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin",
+        "lint": {
+          "validProperties": [
+            "shadow-color",
+            "shadow-opacity",
+            "shadow-offset",
+            "shadow-radius",
+            "aspect-ratio",
+            "text-align-vertical",
+            "elevation"
+          ]
+        }
+      }
+    ],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": true
+  },
+  "exclude": [
+    "libs",
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.setup.js",
+    "jest.config.js"
+  ],
+  "include": ["src/**/*", "e2e/**/*"]
 }

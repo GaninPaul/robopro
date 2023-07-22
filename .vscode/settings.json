@@ -1,0 +1,90 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "importSorter.generalConfiguration.sortOnBeforeSave": true,
+  "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.type": "newLineEachExpressionAfterCountLimitExceptIfOnlyOne",
+  "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.count": 80,
+  "importSorter.importStringConfiguration.tabSize": 2,
+  "importSorter.sortConfiguration.customOrderingRules.defaultOrderLevel": 10,
+  "importSorter.importStringConfiguration.trailingComma": "multiLine",
+  "importSorter.generalConfiguration.exclude": ["App.tsx"],
+  "importSorter.sortConfiguration.customOrderingRules.rules": [
+    {
+      "regex": "^$",
+      "orderLevel": 10
+    },
+    {
+      "regex": "^config",
+      "orderLevel": 20
+    },
+    {
+      "regex": "^types/",
+      "orderLevel": 30
+    },
+    {
+      "regex": "^stores/",
+      "orderLevel": 40
+    },
+    {
+      "regex": "^services/",
+      "orderLevel": 50
+    },
+    {
+      "regex": "^controllers/",
+      "orderLevel": 60
+    },
+    {
+      "regex": "^utils/",
+      "orderLevel": 70
+    },
+    {
+      "regex": "^hooks/",
+      "orderLevel": 80
+    },
+    {
+      "regex": "^navigation/",
+      "orderLevel": 90
+    },
+    {
+      "regex": "^theme/",
+      "orderLevel": 100
+    },
+    {
+      "regex": "^constants/",
+      "orderLevel": 110
+    },
+    {
+      "regex": "^assets/",
+      "orderLevel": 120
+    },
+    {
+      "regex": "^screens/",
+      "orderLevel": 130
+    },
+    {
+      "regex": "^components/",
+      "orderLevel": 140
+    },
+    {
+      "regex": "^tests/",
+      "orderLevel": 150
+    },
+    {
+      "regex": "styles$|style$",
+      "orderLevel": 170
+    },
+    {
+      "regex": "css$|sass$|less$|scss$",
+      "orderLevel": 180
+    },
+    {
+      "regex": "^./",
+      "orderLevel": 160
+    },
+    {
+      "regex": "^../",
+      "orderLevel": 160
+    }
+  ],
+  "java.configuration.updateBuildConfiguration": "disabled"
+}
