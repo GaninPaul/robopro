@@ -1,13 +1,16 @@
-import {createStackNavigator} from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import {CurrencySelection} from '../screens/CurrencySelection/CurrencySelection';
-import {Quotes} from '../screens/Quotes/Quotes.style';
+
+import { CurrencySelection } from 'screens/CurrencySelection/CurrencySelection';
+import { Quotes } from 'screens/Quotes/Quotes';
+
 import {
   appScreensOptions,
+  currencySelectionOptions,
   initialNavigatorOptions,
-  entryScreenOptions,
+  quotesOptions,
 } from './AppOptions';
-import {APP_ROUTES} from './AppRoutes';
+import { APP_ROUTES } from './AppRoutes';
 
 const Stack = createStackNavigator<AppStackParams>();
 
@@ -23,9 +26,13 @@ export const AppNavigator = () => {
         <Stack.Screen
           component={CurrencySelection}
           name={APP_ROUTES.CURRENCY_SELECTION}
-          options={entryScreenOptions}
+          options={currencySelectionOptions}
         />
-        <Stack.Screen component={Quotes} name={APP_ROUTES.QUOTES} />
+        <Stack.Screen
+          component={Quotes}
+          name={APP_ROUTES.QUOTES}
+          options={quotesOptions}
+        />
       </Stack.Group>
     </Stack.Navigator>
   );
