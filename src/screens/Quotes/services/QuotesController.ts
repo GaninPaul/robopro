@@ -25,8 +25,10 @@ class QuotesController {
       if (
         askPrice !== undefined &&
         askPrice !== null &&
+        askPrice !== '' &&
         bidPrice !== undefined &&
-        bidPrice !== null
+        bidPrice !== null &&
+        bidPrice !== ''
       ) {
         QuotesStoreInst.pushData(askPrice, bidPrice);
       }
