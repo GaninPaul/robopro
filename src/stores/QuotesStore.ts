@@ -51,25 +51,26 @@ export class QuotesStore {
     });
   }
 
-  pushData = (askPrice: string, bidPrice: string) => {
+  pushData = (askPrice: number, bidPrice: number, eventTime: string) => {
     const time = new Date();
     if (this._chartLabels.length < elementsCount) {
-      this._chartLabels.push(`${time.getSeconds()}.${time.getMilliseconds()}`);
+      this._chartLabels.push(eventTime);
     } else {
       this._chartLabels.shift();
-      this._chartLabels.push(`${time.getSeconds()}.${time.getMilliseconds()}`);
+      this._chartLabels.push(eventTime);
+      // this._chartLabels.push(`${time.getSeconds()}.${time.getMilliseconds()}`);
     }
     if (this._chartDataBidPrice.length < elementsCount) {
-      this._chartDataBidPrice.push(parseFloat(bidPrice));
+      this._chartDataBidPrice.push(bidPrice);
     } else {
       this._chartDataBidPrice.shift();
-      this._chartDataBidPrice.push(parseFloat(bidPrice));
+      this._chartDataBidPrice.push(bidPrice);
     }
     if (this._chartDataAskPrice.length < elementsCount) {
-      this._chartDataAskPrice.push(parseFloat(askPrice));
+      this._chartDataAskPrice.push(askPrice);
     } else {
       this._chartDataAskPrice.shift();
-      this._chartDataAskPrice.push(parseFloat(askPrice));
+      this._chartDataAskPrice.push(askPrice);
     }
   };
 

@@ -1,5 +1,6 @@
-import React from 'react';
 import 'react-native-gesture-handler';
+import React from 'react';
+import Toast from 'react-native-toast-message';
 
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
@@ -11,6 +12,7 @@ export const App = () => {
       <NavigationContainer>
         <AppNavigator />
       </NavigationContainer>
+      <Toast />
     </SafeAreaProvider>
   );
 };

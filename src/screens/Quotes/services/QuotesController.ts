@@ -1,6 +1,10 @@
+import Toast from 'react-native-toast-message';
+
 import { QuotesStoreInst } from 'stores/QuotesStore';
 
 import { throttle } from 'utils/throttle';
+
+import { validateData } from '../utils/validateData';
 
 const delay = 200;
 
@@ -19,21 +23,18 @@ class QuotesController {
 
   messageListener = (msg: WebSocketMessageEvent) => {
     try {
-      const data = JSON.parse(msg.data);
-      const askPrice = data.a;
-      const bidPrice = data.b;
-      if (
-        askPrice !== undefined &&
-        askPrice !== null &&
-        askPrice !== '' &&
-        bidPrice !== undefined &&
-        bidPrice !== null &&
-        bidPrice !== ''
-      ) {
-        QuotesStoreInst.pushData(askPrice, bidPrice);
+      const { askPrice, bidPrice, eventTime } = validateData(
+        JSON.parse(msg.data),
+      );
+      if (askPrice && bidPrice && eventTime) {
+        QuotesStoreInst.pushData(askPrice, bidPrice, eventTime);
       }
     } catch (error) {
-      console.log(error);
+      Toast.show({
+        type: 'error',
+        text1: 'Something went wrong',
+        text2: `${error}`,
+      });
     }
   };
 
