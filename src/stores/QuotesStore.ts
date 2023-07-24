@@ -52,13 +52,11 @@ export class QuotesStore {
   }
 
   pushData = (askPrice: number, bidPrice: number, eventTime: string) => {
-    const time = new Date();
     if (this._chartLabels.length < elementsCount) {
       this._chartLabels.push(eventTime);
     } else {
       this._chartLabels.shift();
       this._chartLabels.push(eventTime);
-      // this._chartLabels.push(`${time.getSeconds()}.${time.getMilliseconds()}`);
     }
     if (this._chartDataBidPrice.length < elementsCount) {
       this._chartDataBidPrice.push(bidPrice);
