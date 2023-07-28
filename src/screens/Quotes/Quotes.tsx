@@ -1,6 +1,6 @@
 import { StackNavigationProp } from '@react-navigation/stack';
 import { observer } from 'mobx-react-lite';
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 
 import { QuotesStoreInst } from 'stores/QuotesStore';
 
@@ -26,8 +26,11 @@ export const Quotes = observer(({ navigation }: Props) => {
     latestBidPrice,
   } = QuotesStoreInst;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     navigation.setOptions({ title: 'Exchange Rates' });
+  });
+
+  useEffect(() => {
     QuotesControllerInst.start();
     return () => {
       QuotesControllerInst.stop();
