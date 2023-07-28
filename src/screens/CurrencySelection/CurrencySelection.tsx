@@ -1,6 +1,6 @@
 import { StackNavigationProp } from '@react-navigation/stack';
 import { observer } from 'mobx-react-lite';
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 
 import { QuotesStoreInst } from 'stores/QuotesStore';
 
@@ -23,9 +23,13 @@ interface Props {
 export const CurrencySelection = observer(({ navigation }: Props) => {
   const { symbol, setSymbol, clear } = QuotesStoreInst;
 
-  const onPress = () => {
+  const onChange = useCallback((value: string) => {
+    setSymbol(value);
+  }, []);
+
+  const onPress = useCallback(() => {
     navigation.navigate(APP_ROUTES.QUOTES);
-  };
+  }, []);
 
   useEffect(() => {
     clear();
@@ -35,13 +39,7 @@ export const CurrencySelection = observer(({ navigation }: Props) => {
     <Container>
       <Content>
         <Title>Select symbol</Title>
-        <Picker
-          currrentValue={symbol}
-          values={Symbols}
-          onChange={value => {
-            setSymbol(value);
-          }}
-        />
+        <Picker currrentValue={symbol} values={Symbols} onChange={onChange} />
       </Content>
       <Footer>
         <Button onPress={onPress}>Check quotes</Button>

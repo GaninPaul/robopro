@@ -1,5 +1,5 @@
 import { Picker as PickerCommon } from '@react-native-picker/picker';
-import React from 'react';
+import React, { memo } from 'react';
 
 import { PickerContainer } from './Picker.style';
 
@@ -9,7 +9,7 @@ interface Props {
   onChange: (value: string) => void;
 }
 
-export const Picker = ({ currrentValue, values, onChange }: Props) => {
+export const Picker = memo(({ currrentValue, values, onChange }: Props) => {
   const onValueChange = (value: string, _: number): void => {
     onChange(value);
   };
@@ -24,4 +24,4 @@ export const Picker = ({ currrentValue, values, onChange }: Props) => {
       ))}
     </PickerContainer>
   );
-};
+});
